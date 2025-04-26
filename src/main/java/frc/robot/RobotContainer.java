@@ -71,7 +71,7 @@ import frc.robot.generated.TunerConstants;
 
 public class RobotContainer {
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
-    private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
+    private double MaxAngularRate = RotationsPerSecond.of(0.25).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
 
     /* Setting up bindings for necessary control of the swerve drive platform */
     private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
@@ -399,9 +399,9 @@ public class RobotContainer {
                 new CommandIntakeCollect(m_IntakeFlywheels, m_intakeBeamBreak, m_funnelBeamBreak, 5)));
 
 
-            operator.start().whileTrue(new CommandChangeScoreStage(ScoringStageVal.CLIMBING).andThen(new CommandClimbToggleDown(m_Climber, m_FunnelPivot)));
+            //operator.start().whileTrue(new CommandChangeScoreStage(ScoringStageVal.CLIMBING).andThen(new CommandClimbToggleDown(m_Climber, m_FunnelPivot))); Climber
 
-            operator.back().whileTrue(new CommandChangeScoreStage(ScoringStageVal.CLIMBING).andThen(new CommandClimbToggleUp(m_Climber, m_FunnelPivot)));
+            //operator.back().whileTrue(new CommandChangeScoreStage(ScoringStageVal.CLIMBING).andThen(new CommandClimbToggleUp(m_Climber, m_FunnelPivot))); //climber 
 
             // This is a bandaid solution to manually run the intake, incase the normal command gets stuck. -Brady
             operator.leftBumper().onTrue(new SequentialCommandGroup(

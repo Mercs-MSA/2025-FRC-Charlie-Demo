@@ -147,7 +147,7 @@ public class Constants {
 
     public static final class elevatorMMConstants{
         public static final double acceleration = 100;
-        public static final double speed = 150;
+        public static final double speed = 75; //orig speed 150
         public static final double jerk = 0;
 
     }
